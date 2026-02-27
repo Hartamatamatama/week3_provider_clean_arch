@@ -11,3 +11,21 @@ void main() {
     ),
   );
 }
+
+// 1. STATE MODEL (BUSINESS LOGIC) (Di modul ditulis 1 lagi, ikuti saja)
+class CartModel extends ChangeNotifier {
+  final List<String> _items = [];
+
+  List<String> get items => _items;
+
+  void add(String itemName) {
+    _items.add(itemName);
+    // Perhatikan code ini Memberitahu UI untuk update!
+    notifyListeners();
+  }
+
+  void removeAll() {
+    _items.clear();
+    notifyListeners();
+  }
+}
