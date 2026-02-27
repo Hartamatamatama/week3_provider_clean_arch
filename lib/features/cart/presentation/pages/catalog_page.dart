@@ -10,3 +10,15 @@ class CatalogPage extends StatelessWidget {
     const Product(id: '2', name: 'Sate Ayam', price: 20000),
     const Product(id: '3', name: 'Es Teh', price: 5000),
   ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Katalog Makanan'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.shopping_cart),
+            onPressed: () => Navigator.pushNamed(context, AppRouter.cart),
+          ),
+        ],
+      ),
