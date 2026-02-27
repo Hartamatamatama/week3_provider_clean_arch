@@ -5,3 +5,4 @@ import '../providers/cart_provider.dart';
 
 class AddButtonWidget extends StatelessWidget {
   final Product product;
+  const AddButtonWidget({required this.product, super.key});
