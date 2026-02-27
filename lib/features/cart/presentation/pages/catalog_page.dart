@@ -22,3 +22,15 @@ class CatalogPage extends StatelessWidget {
           ),
         ],
       ),
+      body: ListView.builder(
+        itemCount: _products.length,
+        itemBuilder: (context, index) => ListTile(
+          title: Text(_products[index].name),
+          // Menambahkan tampilan harga agar UI lebih cantik
+          subtitle: Text('Rp ${_products[index].price}'),
+          trailing: AddButtonWidget(product: _products[index]),
+        ),
+      ),
+    );
+  }
+}
